@@ -1,3 +1,5 @@
+# find and union algorithms
+
 import math
 n,m = list(map(int, input().strip().split()))
 powers = list(map(int, input().strip().split()))
