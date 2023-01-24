@@ -1,0 +1,50 @@
+
+# return img, nested list
+def read_ppm_file(f):
+    fp = open(f)
+    fp.readline()  # reads P3 (assume it is P3 file)
+    lst = fp.read().split()
+    n = 0
+    n_cols = int(lst[n])
+    n += 1
+    n_rows = int(lst[n])
+    n += 1
+    max_color_value = int(lst[n])
+    n += 1
+    img = []
+    for r in range(n_rows):
+        img_row = []
+        for c in range(n_cols):
+            pixel_col = []
+            for i in range(3):
+                pixel_col.append(int(lst[n]))
+                n += 1
+            img_row.append(pixel_col)
+        img.append(img_row)
+    fp.close()
+    return img, max_color_value
+
+
+# Works
+def img_printer(img):
+    row = len(img)
+    col = len(img[0])
+    cha = len(img[0][0])
+    for i in range(row):
+        for j in range(col):
+            for k in range(cha):
+                print(img[i][j][k], end=" ")
+            print("\t|", end=" ")
+        print()
+
+
+filename = input()
+operation = int(input())
+
+
+# DO_NOT_EDIT_ANYTHING_ABOVE_THIS_LINE
+
+
+
+# DO_NOT_EDIT_ANYTHING_BELOW_THIS_LINE
+
