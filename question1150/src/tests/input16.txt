@@ -1,4 +1,0 @@
-input3.ppm
-4
-filter(horizontal).txt
-2
